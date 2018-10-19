@@ -1,0 +1,19 @@
+<a [routerLink]="['/create']"></a>
+
+<p class='text-info'>
+</p>
+
+
+<div id="left">
+  <h3> List of all tasks: </h3>
+  <div *ngFor="let task of tasks"><br>
+    <li>Title: {{task.title}}</li>
+    <li>Description: {{task.description}}</li> <br>
+    <button [routerLink]="['/edit', task._id]"> Edit</button>
+    <button [routerLink]="['/show', task._id]">Show Details</button>
+
+    <button (click)='onDelete(task)'>Delete</button>
+
+    <br>
+  </div>
+</div>

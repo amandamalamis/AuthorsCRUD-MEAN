@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<a [routerLink]="['/create']"></a>
+<p class='text-info'>
+  Create a new task:
+</p>
+<body>
+  <!-- {{ error }} -->
+    <!-- {{ error | json }} -->
+    <p *ngIf='error.title'> {{error.title.message}} </p>
+    <p *ngIf='error.description'> {{error.description.message}} </p>
+
+  <form (submit)='onSubmitAdd()'>
+    <div class='form-group'>
+      Title: <input type="text" name="newTask.title" [(ngModel)]="newTask.title" /> <br>
+      Description: <input type="text" name="newTask.description" [(ngModel)]="newTask.description" /> <br>
+      <input type="submit" value="Create" />
+    </div>
+  </form>
+  <br><br>
+  <button type='button' [routerLink]="['/']">Cancel </button>
+
+</body>
+</html>

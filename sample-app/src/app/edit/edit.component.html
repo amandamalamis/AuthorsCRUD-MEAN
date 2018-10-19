@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<p class='text-info'>
+  Edit your task:
+</p>
+<body>
+    <!-- {{ error }} -->
+    <p *ngIf='error.title'> {{error.title.message}} </p>
+    <p *ngIf='error.description'> {{error.description.message}} </p>
+
+
+    <form (submit)="onSubmitEdit()">
+    <input type = "hidden" value= "editTask._id">
+      Title: <input type="text" name="editTask.title" [(ngModel)]="editTask.title" placeholder= "editTask.title"/> <br>
+      Description: <input type="text" name="editTask.description" [(ngModel)]="editTask.description" placeholder= "editTask.description"/> <br> 
+      <input type="submit" value="Edit"/>
+    </form>
+
+
+
+<button type='button' [routerLink]="['/']">Cancel </button>
+</body>
+</html>
